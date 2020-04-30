@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Nettoyage du cache pacman
+When = PostTransaction
+Exec = /usr/sbin/paccache -ruk0

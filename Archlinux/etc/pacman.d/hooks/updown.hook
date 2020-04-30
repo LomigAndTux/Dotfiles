@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Réinitialisation de updown
+When = PostTransaction
+Exec = /usr/local/bin/updown-reset

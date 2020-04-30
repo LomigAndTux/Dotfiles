@@ -1,0 +1,66 @@
+#!/bin/bash
+
+countries=(Albania\
+	   Canada\
+	   Finland\
+	   India\
+	   Malaysia\
+	   Portugal\
+	   Spain\
+	   United_States\
+	   Argentina\
+	   Chile\
+	   France\
+	   Indonesia\
+	   Mexico\
+	   Romania\
+	   Sweden\
+	   Vietnam\
+	   Australia\
+	   Costa_Rica\
+	   Georgia\
+	   Ireland\
+	   Moldova\
+	   Serbia\
+	   Switzerland\
+	   Austria\
+	   Croatia\
+	   Germany\
+	   Israel\
+	   Netherlands\
+	   Singapore\
+	   Taiwan\
+	   Belgium\
+	   Cyprus\
+	   Greece\
+	   Italy\
+	   New_Zealand\
+	   Slovakia\
+	   Thailand\
+	   Bosnia_And_Herzegovina\
+	   Czech_Republic\
+	   Hong_Kong\
+	   Japan\
+	   North_Macedonia\
+	   Slovenia\
+	   Turkey\
+	   Brazil\
+	   Denmark\
+	   Hungary\
+	   Latvia\
+	   Norway\
+	   South_Africa\
+	   Ukraine\
+	   Bulgaria\
+	   Estonia\
+	   Iceland\
+	   Luxembourg\
+	   Poland\
+	   South_Korea\
+	   United_Kingdom)
+
+
+rand=$[$RANDOM % ${#countries[@]}]
+country=${countries[$rand]}
+nordvpn connect $country
+nordvpn status

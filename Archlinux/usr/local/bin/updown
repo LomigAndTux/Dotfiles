@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pacman -Syyuw --noconfirm | grep -o \(.*\) | sed 's/(//g' | sed 's/)//g' > /var/cache/updown
