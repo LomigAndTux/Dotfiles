@@ -1,6 +1,7 @@
 #! /bin/sh
 
-export DISPLAY=0
+export DISPLAY=:0
+
 sxhkd &
 setxkbmap fr bepo
 #compton -cC -i 0.8 -e 0.8 -m 0.8 -r 4 -l -4 -t -4 &
