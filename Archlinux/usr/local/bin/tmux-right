@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+function nordvpn-status(){
+    town=$(nordvpn status | grep "City" | sed -e 's/City: //g')
+    status=$(nordvpn status | grep "Status" | sed -e 's/Status: //g')
+
+    echo $status $town
+}
+
+
+
+vpn=`nordvpn-status`
+update=`cat /var/cache/updown`
+
+echo "$vpn > $update"
