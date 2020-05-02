@@ -7,8 +7,8 @@ text-width 80
 
 color background          white   default
 color listnormal          blue   default
-color listfocus           default  green   
+color listfocus           default  black   
 color listnormal_unread   white  default
-color listfocus_unread    white  green   bold
-color info                white  green   bold
+color listfocus_unread    white  black   bold
+color info                white  black   bold
 color article             default  default
