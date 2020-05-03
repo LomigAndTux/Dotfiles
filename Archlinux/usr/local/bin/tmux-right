@@ -2,10 +2,14 @@
 
 
 function nordvpn-status(){
-    town=$(nordvpn status | grep "City" | sed -e 's/City: //g')
-    status=$(nordvpn status | grep "Status" | sed -e 's/Status: //g')
-
-    echo $status $town
+    ip=$(nordvpn status| grep "IP:" | sed -e 's/Your new IP: //g')
+    if [[ $ip == "" ]]
+    then
+        echo "Déconnecté"
+    else
+        town=$(nordvpn status | grep "City" | sed -e 's/City: //g')
+        echo $town" : "$ip
+    fi
 }
 
 
