@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 WHITE='\033[1;37m'
 CYAN='\033[0;36m'
 BLACK='\033[1;30m'

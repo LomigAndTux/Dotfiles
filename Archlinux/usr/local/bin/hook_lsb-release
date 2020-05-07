@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env/bash
 
 sed -i -e s/Arch\ Linux/Gwen\ Erminig\ Linux/g /etc/lsb-release
 sed -i -e s/Arch/\"Gwen\ Erminig\"/g  /etc/lsb-release

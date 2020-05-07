@@ -20,7 +20,7 @@ super + Escape
 
 # quit/restart bspwm
 # super + alt + {q,r}
-super + alt + {m,l}
+super + alt + {m,2}
 	bspc {quit,wm -r}
 
 # close and kill
@@ -124,3 +124,6 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + shift + {Left,Down,Up,Right}
+    euclid_mover {west,south,north,east}
