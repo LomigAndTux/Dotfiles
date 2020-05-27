@@ -1,20 +1,25 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python
+
+import re
+import subprocess
+
+process = subprocess.run(["nordvpn", "status"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+status= process.stdout
 
 
-function nordvpn-status(){
-    ip=$(nordvpn status| grep "IP:" | sed -e 's/Your new IP: //g')
-    if [[ $ip == "" ]]
-    then
-        echo "Déconnecté"
-    else
-        town=$(nordvpn status | grep "City" | sed -e 's/City: //g')
-        echo $town" : "$ip
-    fi
-}
+if re.search('Connected', status):
+    city = re.findall(r'City: (\w+)', status)[0]
+    country = re.findall(r'Country: (\w+)', status)[0]
+    ip = re.findall(r'IP. (\d+\.\d+\.\d+\.\d+)', status)[0]
+
+    nordvpn=country+" » "+city+" » "+ip
+else:
+    nordvpn='Déconnecté'
 
 
+fichier = open("/var/cache/updown", "r")
+update = fichier.read()
+fichier.close
 
-vpn=`nordvpn-status`
-update=`cat /var/cache/updown`
 
-echo "$vpn > $update"
+print(nordvpn+" » "+update)

@@ -39,3 +39,6 @@ color14 = #525f66
 color7  = #b3b3b3
 color15 = #cdcdcd
 
+[options]
+allow_bold = true
+font = Monospace 12

@@ -2,17 +2,14 @@
 
 export DISPLAY=:0
 
-sxhkd &
 setxkbmap fr bepo
-#compton -cC -i 0.8 -e 0.8 -m 0.8 -r 4 -l -4 -t -4 &
+gwen-sxhkd
+compton -cC -i 0.9 -e 0.9 -m 0.9 -r 4 -l -4 -t -4 &
 sh ~/.fehbg &
 
-polybar main &
-
-
-bspc monitor  DisplayPort-1 -d I II III IV V VI VII
-bspc monitor  DisplayPort-0 -d VIII
-bspc monitor  HDMI-A-0 -d IX
+bspc monitor  DisplayPort-1 -d            
+bspc monitor  DisplayPort-0 -d     
+bspc monitor  HDMI-A-0 -d   
 
 bspc config border_width         2
 bspc config window_gap          20
@@ -21,10 +18,34 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-#bspc rule -a Gimp desktop='^8' state=floating follow=on
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
-#bspc rule -a Firefox desktop='^5'
+bspc rule -a TelegramDesktop desktop='^1'
+bspc rule -a Discord desktop='^1'
+bspc rule -a Daily desktop='^2'
+bspc rule -a Audacity desktop='^3'
 
+bspc rule -a Nightly desktop='^5'
+bspc rule -a Uget-gtk desktop='^6'
+bspc rule -a Gamehub desktop='^7'
+bspc rule -a Steam desktop='^7'
+bspc rule -a VSCodium desktop='^8'
+bspc rule -a Virt-manager desktop='^9'
+bspc rule -a kdenlive desktop='^10'
+bspc rule -a obs desktop='^12'
+
+bspc desktop ^1 --layout tiled
+bspc desktop ^2 --layout tiled
+bspc desktop ^3 --layout tiled
+bspc desktop ^4 --layout tiled
+bspc desktop ^5 --layout tiled
+bspc desktop ^6 --layout tiled
+bspc desktop ^7 --layout monocle
+bspc desktop ^8 --layout tiled
+bspc desktop ^9 --layout monocle
+bspc desktop ^10 --layout tiled
+bspc desktop ^11 --layout tiled
+bspc desktop ^12 --layout tiled
+
+gwen-polybar
+
+telegram-desktop &
+discord &
