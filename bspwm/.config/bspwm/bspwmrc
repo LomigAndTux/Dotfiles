@@ -3,9 +3,11 @@
 export DISPLAY=:0
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python/site-packages/" 
 
+eval "$(ssh-agent)"
+ssh-add ~/.ssh/github
+
 setxkbmap fr bepo
 gwen-sxhkd &
-gwen-ssh-init &
 compton -cC -i 0.9 -e 0.9 -m 0.9 -r 4 -l -4 -t -4 &
 sh ~/.fehbg &
 
