@@ -100,5 +100,5 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + y ; {a,d,e,f,g,k,m,n,o,p,Print,s,t,u,v,XF86HomePage,XF86Mail,z}
-    {audacity,discord,code-oss,files,gamehub,kdenlive,zik,rss,obs,pmix,bzh-scrot,steam,telegram-desktop,uget-gtk,virt-manager,firefox,thunderbird,zettlr}
+    {audacity,discord,vscodium,files,gamehub,kdenlive,zik,rss,obs,pmix,bzh-scrot,steam,telegram-desktop,uget-gtk,virt-manager,firefox,thunderbird,zettlr}
 

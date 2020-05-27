@@ -25,19 +25,20 @@ while IFS=":" read -r a b; do
             mem_total="$((mem_total / 1024))MiB"
 
 
-printf "${WHITE}                 ${BLACK}   lomig${WHITE}@${BLACK}pennsardin\n" 
-printf "${WHITE}        @           ----------------\n"
-printf "${WHITE}       @@@       ${CYAN}   OS : ${NC}$os\n" 
-printf "${WHITE}     @  @  @     ${CYAN}   Kernel : ${NC}$kernel\n"
-printf "${WHITE}    @@@   @@@    ${CYAN}   Uptime : ${NC}$uptime\n"
-printf "${WHITE}     @  @  @     ${CYAN}   Packages : ${NC}$packages\n"
-printf "${WHITE}       /@\       ${CYAN}   Shell : ${NC}$shell\n"
-printf "${WHITE}       @@@       ${CYAN}   Window Manager : ${NC}bspwm\n"
-printf "${WHITE}      /@@@\      ${CYAN}   Resolution : ${NC}$resolution\n"
-printf "${WHITE}      @@@@@      ${CYAN}   Terminal : ${NC}termite\n"
-printf "${WHITE}     /@@@@@\     ${CYAN}   CPU : ${NC}AMD Ryzen 5 1500X @4Ghz\n"
-printf "${WHITE}     \@@@@@/     ${CYAN}   GPU : ${NC}AMD Radeon RX 580\n"
-printf "${WHITE}      \/ \/      ${CYAN}   Memory : ${NC}$mem_used / $mem_total\n"
+printf "${WHITE}                    ${BLACK}   lomig${WHITE}@${BLACK}pennsardin\n" 
+printf "${WHITE}         @             ----------------\n"
+printf "${WHITE}        @@@         ${CYAN}   OS : ${NC}$os\n" 
+printf "${WHITE}     @   @   @      ${CYAN}   Kernel : ${NC}$kernel\n"
+printf "${WHITE}    @@@     @@@     ${CYAN}   Uptime : ${NC}$uptime\n"
+printf "${WHITE}     @   @   @      ${CYAN}   Packages : ${NC}$packages\n"
+printf "${WHITE}        /@\         ${CYAN}   Shell : ${NC}$shell\n"
+printf "${WHITE}        @@@         ${CYAN}   Window Manager : ${NC}bspwm\n"
+printf "${WHITE}       /@@@\        ${CYAN}   Resolution : ${NC}$resolution\n"
+printf "${WHITE}       @@@@@        ${CYAN}   Terminal : ${NC}termite\n"
+printf "${WHITE}      /@@@@@\       ${CYAN}   CPU : ${NC}AMD Ryzen 5 1500X @4Ghz\n"
+printf "${WHITE}      \@@@@@/       ${CYAN}   GPU : ${NC}AMD Radeon RX 580\n"
+printf "${WHITE}       \/ \/        ${CYAN}   Memory : ${NC}$mem_used / $mem_total\n"
 echo ""
 
 cs-panes
+
