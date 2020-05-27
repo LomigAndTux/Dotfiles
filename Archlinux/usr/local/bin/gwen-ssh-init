@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import os
+from gwen import admin
+
+processList = admin.checkProcess('ssh-agent')
+
+if len(processList) == 0:
+    os.system('eval "`ssh-agent -s`" &> /dev/null')
+    os.system('ssh-add /home/lomig/.ssh/github &> /dev/null')
+
