@@ -17,4 +17,4 @@ else:
 
 for elem in ('main','left','right'):
     if eval(elem) is False :
-        os.system("polybar "+elem+" 2> /dev/null &")
+        os.system("polybar "+elem+" &  2> /dev/null")

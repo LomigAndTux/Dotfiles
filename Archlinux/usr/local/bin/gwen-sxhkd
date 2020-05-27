@@ -7,5 +7,5 @@ from gwen import admin
 processList = admin.checkProcess('sxhkd')
 
 if len(processList) == 0 :
-    os.system("sxhkd  2> /dev/null &")
+    os.system("sxhkd &  2> /dev/null")
 
