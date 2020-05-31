@@ -8,10 +8,10 @@ ssh-add ~/.ssh/github
 
 setxkbmap fr bepo
 gwen-sxhkd &
+xrdb -merge ~/.Xdefaults
 compton -cC -i 0.9 -e 0.9 -m 0.9 -r 4 -l -4 -t -4 &
-sh ~/.fehbg &
 
-bspc monitor  DisplayPort-1 -d          
+bspc monitor  DisplayPort-1 -d          
 bspc monitor  DisplayPort-0 -d     
 bspc monitor  HDMI-A-0 -d      
 
@@ -49,5 +49,6 @@ bspc desktop ^10 --layout tiled
 bspc desktop ^11 --layout tiled
 bspc desktop ^12 --layout tiled
 
+wal -i ~/Images/Gwen\ Erminig\ Night\ Road.png
 gwen-polybar &
 

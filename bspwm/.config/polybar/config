@@ -146,6 +146,8 @@ cursor-scroll = ns-resize
 
 
 [module/bspwm]
+wm-restack = bspwm
+
 type = internal/bspwm
 
 label-focused = %name%
@@ -190,6 +192,10 @@ type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 tail = true
 click-left = thunderbird
+
+[module/nordvpn]
+type = custom/script
+exec = /usr/local/bin/
 
 [settings]
 screenchange-reload = true
