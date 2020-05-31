@@ -3,7 +3,7 @@
 export DISPLAY=:0
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python/site-packages/" 
 
-eval "$(ssh-agent)"
+eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github
 
 setxkbmap fr bepo
