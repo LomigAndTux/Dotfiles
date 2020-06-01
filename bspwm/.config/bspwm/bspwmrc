@@ -36,6 +36,8 @@ bspc rule -a kdenlive desktop='^9'
 bspc rule -a obs desktop='^11'
 bspc rule -a Uget-gtk desktop='^12'
 
+bspc rule -a Update state=floating
+
 bspc desktop ^1 --layout tiled
 bspc desktop ^2 --layout tiled
 bspc desktop ^3 --layout tiled

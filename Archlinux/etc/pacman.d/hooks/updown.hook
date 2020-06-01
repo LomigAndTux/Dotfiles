@@ -6,4 +6,4 @@ Target = *
 [Action]
 Description = Réinitialisation de updown
 When = PostTransaction
-Exec = /usr/local/bin/updown-reset
+Exec = /home/lomig/bin/updown-reset
