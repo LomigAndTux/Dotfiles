@@ -58,7 +58,7 @@ font-1 = FontAwesome:pixelsize=12;1
 font-2 = siji:pixelsize=12;1
 
 modules-left = bspwm
-#modules-center = date
+modules-center = nordvpn
 modules-right = gmail date
 
 #tray-position = right
@@ -195,7 +195,8 @@ click-left = thunderbird
 
 [module/nordvpn]
 type = custom/script
-exec = /usr/local/bin/
+exec = ~/bin/vpn-status
+click-left = ~/bin/vpn-randomize
 
 [settings]
 screenchange-reload = true

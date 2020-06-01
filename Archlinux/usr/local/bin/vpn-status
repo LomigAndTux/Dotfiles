@@ -16,10 +16,4 @@ if re.search('Connected', status):
 else:
     nordvpn='Déconnecté'
 
-
-fichier = open("/var/cache/updown", "r")
-update = fichier.read()
-fichier.close
-
-
-print(nordvpn+" » "+update)
+print(nordvpn)
