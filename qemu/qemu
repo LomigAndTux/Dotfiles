@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export SDL_VIDEO_X11_DGAMOUSE=0
+config="$HOME/qemu/conf/$1"
+qemu-system-x86_64 -readconfig $config

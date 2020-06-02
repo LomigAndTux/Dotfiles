@@ -1,0 +1,56 @@
+#! /bin/sh
+
+export DISPLAY=:0
+export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python/site-packages/" 
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github
+
+setxkbmap fr bepo
+gwen-sxhkd &
+xrdb -merge ~/.Xdefaults
+compton -cC -i 0.9 -e 0.9 -m 0.9 -r 4 -l -4 -t -4 &
+
+bspc monitor  DisplayPort-1 -d          
+bspc monitor  DisplayPort-0 -d     
+bspc monitor  HDMI-A-0 -d      
+
+bspc config border_width         2
+bspc config window_gap          40
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a TelegramDesktop desktop='^1'
+bspc rule -a Discord desktop='^1'
+bspc rule -a Daily desktop='^2'
+bspc rule -a Audacity desktop='^3'
+
+bspc rule -a Nightly desktop='^5'
+bspc rule -a Gamehub desktop='^6'
+bspc rule -a Steam desktop='^6'
+bspc rule -a VSCodium desktop='^7'
+bspc rule -a Virt-manager desktop='^8'
+bspc rule -a kdenlive desktop='^9'
+bspc rule -a obs desktop='^11'
+bspc rule -a Uget-gtk desktop='^12'
+
+bspc rule -a Update state=floating
+
+bspc desktop ^1 --layout tiled
+bspc desktop ^2 --layout tiled
+bspc desktop ^3 --layout tiled
+bspc desktop ^4 --layout tiled
+bspc desktop ^5 --layout tiled
+bspc desktop ^6 --layout monocle
+bspc desktop ^7 --layout tiled
+bspc desktop ^8 --layout monocle
+bspc desktop ^9 --layout tiled
+bspc desktop ^10 --layout tiled
+bspc desktop ^11 --layout tiled
+bspc desktop ^12 --layout tiled
+
+wal -i ~/Images/Gwen\ Erminig\ Night\ Road.png
+gwen-polybar &
+

@@ -1,0 +1,2 @@
+export PATH="$PATH:$HOME/bin:/usr/local/texlive/2020/bin/x86_64-linux"
+export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python/site-packages/"

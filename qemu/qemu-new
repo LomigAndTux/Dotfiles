@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+QEMU="$HOME/.qemu"
+export SDL_VIDEO_X11_DGAMOUSE=0
+
+
+###
+#
+###
+function usage(){
+	echo << EOF >&2
+Utilisation : 
+EOF
+exit 1
+}
+###
+#
+# $1 : img location
+#
+###
+function img_create(){
+    qemu-img create -f qcow2 $1 20G &>/dev/null
+}
+
+###
+#
+# $1 : img location
+# $2 : iso file
+#
+###
+function install(){
+    qemu-system-x86_64 -enable-kvm \
+                       -smp 4 \
+                       -k fr \
+                       -m 4096 \
+                       -hda $1\
+                       -boot d \
+                       -cdrom $2 \
+                       -net nic \
+                       -net user \
+                       -usb \
+                       -device usb-mouse \
+                       -device usb-kbd \
+                       -no-acpi \
+                       #-vga std \
+                       #-display gtk,show-cursor=on,gl=on 
+}
+
+
+while [ $# != 0 ]
+do
+    case $1 in
+    -h|--help) usage ;;
+    -n|--name) shift ; name=$1 ;;
+    -i|--iso) shift ; iso=$1 ;;
+    esac
+    shift
+done
+
+
+IMG=$QEMU/img/$name.img.qcow2
+CONF=$QEMU/conf/$name
+
+if [ ! -f $IMG ] || [ ! -f $CONF ]
+then
+    img_create $IMG
+    install $IMG $iso
+else
+    echo "The qcow2 file already exists"
+fi

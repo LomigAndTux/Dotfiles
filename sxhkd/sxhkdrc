@@ -1,0 +1,99 @@
+#
+# wm independent hotkeys
+#
+
+# Émulateur de terminal
+super + Return
+	xterm
+
+# Menu
+super + @space
+	rofi -show drun -theme ~/.cache/wal/colors-rofi-dark.rasi
+
+# Recharger la configuration de sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# Quitter bspwm
+super + alt + q
+	bspc quit
+
+# Recharger la confguration de bspwm
+super + alt + r
+	{ pkill polybar ; pkill ssh-agent ; \
+	gwen-polybar ; \
+	bspc wm -r }
+
+# Fermeture  & kill des applications
+super + {_,shift + }x
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# Se déplacer sur les bureaux
+super + {_,shift + } F{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
+
+super + F10
+	bspc desktop -f '^10'
+super + F11
+	bspc desktop -f '^11'
+super + F12
+	bspc desktop -f '^12'
+# set the window state
+super + {t,shift + s,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Rotation des applications dans le bureau
+super + {_,shift + }r
+	bspc node @/ --rotate {90,-90}	
+
+# Bouger une fenetre flottante
+super + {Left,Dowm,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+#
+# focus/swap
+#
+
+# focus/permuter the node in the given direction
+super + {_,shift + }{v,d,l,j}
+	bspc node -{f,s} {west,south,north,east}.local
+
+# focus the next/previous desktop in the current monitor
+super + guillemot{left,right}
+	bspc desktop -f {prev,next}.local
+
+#
+# move/resize
+#
+
+# Application desktop change
+super + alt + {v,j}
+	bspc node -m {prev,next}
+
+# expand a window by moving one of its side inward
+super + alt  + {Left,Down,Up,Right}
+    	bspc node -z {left -20 0,bottom 0 +20,top 0 -20,right +20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {Left,Down,Up,Right}
+        bspc node -z {right -20 0,top 0 +20,bottom 0 -20,left +20 0}
+
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + y ; {a,d,e,f,g,k,m,n,o,p,s,t,u,XF86HomePage,XF86Mail,z}
+    {audacity,discord,vscodium,files,gamehub,kdenlive,zik,rss,obs,pmix,steam,telegram-desktop,uget-gtk,firefox,thunderbird,zettlr}
+
+Print
+	scrot -a 3840,0,3840,2160

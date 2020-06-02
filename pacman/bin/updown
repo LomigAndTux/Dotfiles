@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+up=$(pacman -Syyuw --noconfirm | grep -o \(.*\) | sed 's/(//g' | sed 's/)//g')
+
+if [[ "$up" == "" ]]
+then
+	echo "" > /var/cache/updown
+else
+	echo "$up" > /var/cache/updown
+fi

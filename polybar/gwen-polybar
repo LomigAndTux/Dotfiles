@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+import os
+
+from gwen import admin
+
+processList = admin.checkProcess('polybar')
+
+if len(processList) > 0:
+    main = (['polybar','main'] in processList)
+    left = (['polybar','left'] in processList)
+    right = (['polybar','right'] in processList)
+else:
+    main = False
+    left = False
+    right = False
+
+for elem in ('main','left','right'):
+    if eval(elem) is False :
+        os.system("polybar "+elem+" &  2> /dev/null")

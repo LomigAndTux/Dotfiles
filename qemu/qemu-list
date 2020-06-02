@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+QEMU=$HOME/.qemu
+
+ls -1 $QEMU/bin

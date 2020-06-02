@@ -1,0 +1,72 @@
+article-sort-order  desc
+auto-reload         yes
+#browser             firefox %u
+browser             ~/.config/piper
+confirm-exit        no
+max-items           100
+notify-program      notify-send
+#notify-program      notify-send -i ~/.icons/48arch.png 'Newsboat' 
+reload-threads      3
+reload-time         0
+save-path           ~/.newsboat/saved_articles
+show-read-articles  no
+show-read-feeds     no
+highlight all "Linux" color166 black bold
+highlight all "Video" color133 black bold
+highlight all "TV" color33 black bold
+highlight all "News" color34 black bold
+highlight all "Reddit" color190 black bold
+highlight all "Alert" color124 black bold
+highlight all "Tech" color248 black bold
+#download-full-page yes 
+notify-always yes 
+#mark-as-read-on-hover yes 
+always-display-description true 
+bookmark-cmd /home/cirrus/scripts/newsbeuter_bookmarks_surfraw.sh
+#
+#-------- macros {{{
+#------------------------------------------------------
+# Note: macro prefix key ( default: , )
+external-url-viewer "urlview"
+macro v set browser "mpv"; open-in-browser ; set browser piper
+macro f set browser "firefox"; open-in-browser ; set browser piper
+macro t set browser "peerflix"; open-in-browser ; set browser peerflix
+macro w set browser "w3m"; open-in-browser ; set browser piper
+macro p set browser "dmenuhandler"; open-in-browser ; set browser piper
+# c copies the link to the clipboard.
+# The line below is probably the skiddiest line I've ever written.
+macro c set browser "copy(){ echo $1 | xclip ;}; copy "; open-in-browser ; set browser piper
+#
+# formatting and colorization ------------------------------------------
+ 
+articlelist-format "%4i %f %D %?T?|%-17T| ?%t"
+ 
+highlight feedlist "^ *[0-9]+ *N " color15 color0
+highlight articlelist "^ *[0-9]+ *N " color15 color0
+ 
+highlight article "^(Feed|Title|Author|Link|Date|Linux):.*" color75 default
+highlight article "^Podcast Download URL:.*" color71 default
+highlight article "^Links:" white color0 underline
+highlight article "\\[[0-9][0-9]*\\]" color72 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color72 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color72 default bold
+highlight article ":.*\\(link\\)$" color74 default
+highlight article ":.*\\(image\\)$" color74 default
+highlight article ":.*\\(embedded flash\\)$" color74 default
+ 
+color listnormal color208 color234
+color listnormal_unread color244 color234 
+color listfocus   color15 color0 blink
+color info  red default bold
+color listfocus_unread color166 color0 bold
+color info color38 color235
+color background color15 color0
+color article color15 color0 
+
+feedlist-format "%-65t %?d?- %-65d&? %> %u"
+articlelist-format "%-4i %f %t"
+feedlist-title-format "%N %V %> %u feeds with new articles"
+articlelist-title-format "%T"
+html-renderer "w3m -dump -T text/HTML -cols 100"
+highlight article "^(Feed|Title|Author|Link|Date):.*" color0 default blink
+notify-format  "%I %d %n %f new articles (%n unread articles, %f unread feeds)"

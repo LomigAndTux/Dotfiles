@@ -1,0 +1,35 @@
+export EDITOR=nvim
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+alias -g C='| wc -l'
+alias -g M='| more '
+alias -g NE='2> /dev/null'
+
+
+
+alias blog-brouillon="hugo serve -D -s /home/lomig/Documents/Blog"
+alias g="git"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push origin master"
+alias e=$EDITOR
+alias n="newsboat"
+alias p="sudo pacman -Su"
+alias q="qemu"
+alias ql="qemu-list"
+alias qk="qemu-keep"
+alias qt="qemu-test"
+alias qn="qemu-new"
+alias b="bzhfetch"
+alias v="vpn-randomize"
+alias h="hugo"
+alias l="exa"
+alias ll="exa -l"
+alias s="scrot -s"
+alias t="topydo columns"
+alias unlock-pacman-db="sudo rm /var/lib/pacman/db.lck"
+alias c-bspwm="e ~/.config/bspwm/bspwmrc"
+alias c-newsboat-urls="e ~/.newsboat/urls"
+alias c-sxhkd="e ~/.config/sxhkd/sxhkdrc ; pkill -USR1 -x sxhkd"
+alias c-zshrc="e ~/.zshrc.local ; source ~/.zshrc.local"
+alias m="pulsemixer"
