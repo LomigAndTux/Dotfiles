@@ -1,9 +1,0 @@
-[Trigger]
-Operation = Upgrade
-Type = Package
-Target = *
-
-[Action]
-Description = Réinitialisation de updown
-When = PostTransaction
-Exec = /home/lomig/bin/updown-reset

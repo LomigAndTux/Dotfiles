@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-scrot --delay 5 -a 3840,0,3840,2160

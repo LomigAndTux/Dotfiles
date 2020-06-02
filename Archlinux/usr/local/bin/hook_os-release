@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-sed -i -e s/Arch\ Linux/Gwen\ Erminig\ Linux/g /usr/lib/os-release
-sed -i -e s/arch/erminig/g /usr/lib/os-release
-sed -i -e s/archlinux/gwen_erminig/g /usr/lib/os-release
-

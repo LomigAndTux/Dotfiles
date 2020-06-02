@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-scrot -a 0,0,3840,2160
