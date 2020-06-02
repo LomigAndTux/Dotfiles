@@ -15,8 +15,9 @@ help:
 	@echo '    make newsboat 		install newsboat'
 	@echo '    make nordvpn 		install nordvpn'
 	@echo '    make pacman 			install pacman'
-	@echo '    make pulsemixer		install pulsemixer'
+	@echo '    make picom 			install picom'
 	@echo '    make polybar			install polybar'
+	@echo '    make pulsemixer		install pulsemixer'
 	@echo '    make python 			install python'
 	@echo '    make ranger 			install ranger'
 	@echo '    make reflector		install reflector'
@@ -96,11 +97,11 @@ pacman_hooks: updown reflector
 	sudo systemctl start updown.service
 	sudo systemctl enable updown.service
 
-pulsemixer: 
-	if [ ! -f /usr/bin/pulsemixer ]; then \
-		$(PACMAN) pulsemixer ; \
+picom:
+	if [ ! -f /usr/bin/picom ]; then \
+		$(PACMAN) picom ;\
 	fi
-	sudo ln -s `pwd`/pulsemixer/pmix /usr/local/bin/pmix
+	ln -s `pwd`/picom/picom.conf ~/.config/picom.conf
 
 polybar: nordvpn
 	if [ ! -f /usr/bin/polybar ]; then \
@@ -111,6 +112,12 @@ polybar: nordvpn
 	cp -rf `pwd`/polybar-gmail ~/.config/polybar/gmail
 	ln -sf `pwd`/pacman/bin/check_update /usr/local/bin/check_update
 	ln -sf `pwd`/pacman/bin/xterm_update /usr/local/bin/xterm_update
+
+pulsemixer: 
+	if [ ! -f /usr/bin/pulsemixer ]; then \
+		$(PACMAN) pulsemixer ; \
+	fi
+	sudo ln -s `pwd`/pulsemixer/pmix /usr/local/bin/pmix
 
 python:
 	if [ ! -d "/usr/local/lib/python/site-packages" ]; then \
@@ -175,4 +182,4 @@ zsh:
 	ln -sf `pwd`/zsh/zshenv ~/.zshenv
 	ln -sf `pwd`/zsh/zshrc.local ~/.zshrc.local
 
-.PHONY:archlinux bspwm bzhfetch git mpv newsboat nordvpn pacman pulsemixer polybar python ranger scrot sxhkd tmux zsh
+.PHONY:archlinux bspwm bzhfetch git mpv newsboat nordvpn pacman picom pulsemixer polybar python ranger scrot sxhkd tmux zsh
