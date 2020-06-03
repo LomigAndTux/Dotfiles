@@ -17,6 +17,7 @@ help:
 	@echo '    make pacman 			install pacman'
 	@echo '    make picom 			install picom'
 	@echo '    make polybar			install polybar'
+	@echo '    make pulseaudio		install pulseaudio'
 	@echo '    make pulsemixer		install pulsemixer'
 	@echo '    make python 			install python'
 	@echo '    make ranger 			install ranger'
@@ -113,6 +114,10 @@ polybar: nordvpn
 	ln -sf `pwd`/pacman/bin/check_update /usr/local/bin/check_update
 	ln -sf `pwd`/pacman/bin/xterm_update /usr/local/bin/xterm_update
 
+pulseaudio:
+	sudo ln -sf `pwd`/pulseaudio/default.pa /etc/pulse/default.pa
+	sudo ln -sf `pwd`/pulseaudio/main.conf /etc/bluetooth/main.conf
+
 pulsemixer: 
 	if [ ! -f /usr/bin/pulsemixer ]; then \
 		$(PACMAN) pulsemixer ; \
@@ -182,4 +187,4 @@ zsh:
 	ln -sf `pwd`/zsh/zshenv ~/.zshenv
 	ln -sf `pwd`/zsh/zshrc.local ~/.zshrc.local
 
-.PHONY:archlinux bspwm bzhfetch git mpv newsboat nordvpn pacman picom pulsemixer polybar python ranger scrot sxhkd tmux zsh
+.PHONY:archlinux bspwm bzhfetch git mpv newsboat nordvpn pacman picom pulseaudio pulsemixer polybar python ranger scrot sxhkd tmux zsh
