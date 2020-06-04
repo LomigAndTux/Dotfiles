@@ -3,6 +3,7 @@
 export DISPLAY=:0
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python/site-packages/" 
 
+vpn-randomize
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github
 
