@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+wall=`ls ~/Images/Wallpaper|sort -R|tail -n 1`
+echo $wall
+wal -i ~/Images/Wallpaper/$wall

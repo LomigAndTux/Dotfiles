@@ -52,6 +52,6 @@ bspc desktop ^10 --layout tiled
 bspc desktop ^11 --layout tiled
 bspc desktop ^12 --layout tiled
 
-wal -i ~/Images/Gwen\ Erminig\ Night\ Road.png
+wall-randomize
 gwen-polybar &
 

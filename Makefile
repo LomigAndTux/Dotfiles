@@ -20,6 +20,7 @@ help:
 	@echo '    make pulseaudio		install pulseaudio'
 	@echo '    make pulsemixer		install pulsemixer'
 	@echo '    make python 			install python'
+	@echo '    make pywal 			install pywal'
 	@echo '    make ranger 			install ranger'
 	@echo '    make reflector		install reflector'
 	@echo '    make scrot 			install scrot'
@@ -130,6 +131,12 @@ python:
 	fi
 	sudo cp -rf `pwd`/python/gwen /usr/local/lib/python/site-packages 
 
+pywal:
+	if [ ! -f /usr/bin/wal ]; then \
+		$(PACMAN) python-pywal ; \
+	fi
+	sudo ln -sf `pwd`/pywal/wall-randomize /usr/local/bin/wall-randomize
+
 ranger: 
 	if [ ! -f /usr/bin/ranger ]; then \
 		$(PACMAN) ranger; \
@@ -187,4 +194,4 @@ zsh:
 	ln -sf `pwd`/zsh/zshenv ~/.zshenv
 	ln -sf `pwd`/zsh/zshrc.local ~/.zshrc.local
 
-.PHONY:archlinux bspwm bzhfetch git mpv newsboat nordvpn pacman picom pulseaudio pulsemixer polybar python ranger scrot sxhkd tmux zsh
+.PHONY:archlinux bspwm bzhfetch git mpv newsboat nordvpn pacman picom pulseaudio pulsemixer polybar python pywal ranger scrot sxhkd tmux zsh
