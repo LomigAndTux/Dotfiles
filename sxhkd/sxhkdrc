@@ -100,3 +100,12 @@ Print
 
 XF86Calculator
 	xterm_bc
+
+XF86HomePage
+	firefox
+
+F11
+	vpn-randomize
+
+F12
+	wall-randomize
