@@ -102,7 +102,7 @@ picom:
 	if [ ! -f /usr/bin/picom ]; then \
 		$(PACMAN) picom ;\
 	fi
-	ln -s `pwd`/picom/picom.conf ~/.config/picom.conf
+	ln -sf `pwd`/picom/picom.conf ~/.config/picom.conf
 
 polybar: nordvpn
 	if [ ! -f /usr/bin/polybar ]; then \
@@ -122,7 +122,7 @@ pulsemixer:
 	if [ ! -f /usr/bin/pulsemixer ]; then \
 		$(PACMAN) pulsemixer ; \
 	fi
-	sudo ln -s `pwd`/pulsemixer/pmix /usr/local/bin/pmix
+	sudo ln -sf `pwd`/pulsemixer/pmix /usr/local/bin/pmix
 
 python:
 	if [ ! -d "/usr/local/lib/python/site-packages" ]; then \
@@ -145,9 +145,9 @@ scrot:
 	if [ ! -f /usr/bin/scrot ]; then \
 		$(PACMAN) scrot; \
 	fi
-	sudo ln -s `pwd`/scrot/gwen-scrot-left /usr/local/bin/gwen-scrot-left
-	sudo ln -s `pwd`/scrot/gwen-scrot-main /usr/local/bin/gwen-scrot-main
-	sudo ln -s `pwd`/scrot/gwen-scrot-right /usr/local/bin/gwen-scrot-right
+	sudo ln -sf `pwd`/scrot/gwen-scrot-left /usr/local/bin/gwen-scrot-left
+	sudo ln -sf `pwd`/scrot/gwen-scrot-main /usr/local/bin/gwen-scrot-main
+	sudo ln -sf `pwd`/scrot/gwen-scrot-right /usr/local/bin/gwen-scrot-right
 
 sxhkd: 
 	if [ ! -f /usr/bin/sxhkd ]; then \
