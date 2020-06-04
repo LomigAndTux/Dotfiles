@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xterm -fa "DejaVu Sans Mono" -fs 12 -class "Calculator" -e "bc -q -l"
+ 

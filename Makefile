@@ -8,6 +8,7 @@ help:
 	@echo 'Usage :'
 	@echo '    make all 			install everything'
 	@echo '    make archlinux		install archlinux'
+	@echo '    make bc 			install bc'
 	@echo '    make bspwm 			install bspwm'
 	@echo '    make bzhfetch 		install bzhfetch'
 	@echo '    make git 			install git'
@@ -33,6 +34,12 @@ help:
 archlinux:
 	sudo ln -sf `pwd`/archlinux/coredump.conf /etc/systemd/coredump.conf
 	sudo ln -sf `pwd`/archlinux/journald.conf /etc/systemd/journald.conf
+
+bc:
+	if [ ! -f /usr/bin/bc ]; then \
+		$(PACMAN) bc ;\
+	fi
+	sudo ln -sf `pwd`/bc/xterm_bc /usr/local/bin/xterm_bc
 
 bspwm: sxhkd polybar
 	if [ ! -f /usr/bin/bspwm ];then \
@@ -194,4 +201,4 @@ zsh:
 	ln -sf `pwd`/zsh/zshenv ~/.zshenv
 	ln -sf `pwd`/zsh/zshrc.local ~/.zshrc.local
 
-.PHONY:archlinux bspwm bzhfetch git mpv newsboat nordvpn pacman picom pulseaudio pulsemixer polybar python pywal ranger scrot sxhkd tmux zsh
+.PHONY:archlinux bc bspwm bzhfetch git mpv newsboat nordvpn pacman picom pulseaudio pulsemixer polybar python pywal ranger scrot sxhkd tmux zsh

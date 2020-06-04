@@ -97,3 +97,6 @@ super + y ; {a,d,e,f,g,k,m,n,o,p,s,t,u,XF86HomePage,XF86Mail,z}
 
 Print
 	scrot -a 3840,0,3840,2160
+
+XF86Calculator
+	xterm_bc
