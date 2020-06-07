@@ -119,8 +119,8 @@ polybar: nordvpn
 	ln -sf `pwd`/polybar/config ~/.config/polybar/config
 	sudo ln -sf `pwd`/polybar/gwen-polybar /usr/local/bin/gwen-polybar
 	cp -rf `pwd`/polybar-gmail ~/.config/polybar/gmail
-	ln -sf `pwd`/pacman/bin/check_update /usr/local/bin/check_update
-	ln -sf `pwd`/pacman/bin/xterm_update /usr/local/bin/xterm_update
+	sudo ln -sf `pwd`/pacman/bin/check_update /usr/local/bin/check_update
+	sudo ln -sf `pwd`/pacman/bin/xterm_update /usr/local/bin/xterm_update
 
 pulseaudio:
 	sudo ln -sf `pwd`/pulseaudio/default.pa /etc/pulse/default.pa
@@ -148,7 +148,7 @@ ranger:
 	if [ ! -f /usr/bin/ranger ]; then \
 		$(PACMAN) ranger; \
 	fi
-	ln -sf `pwd`/ranger/files /usr/local/bin/files
+	sudo ln -sf `pwd`/ranger/files /usr/local/bin/files
 
 reflector:  
 	if [ ! -f /usr/bin/reflector ]; then \
