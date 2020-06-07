@@ -86,10 +86,10 @@ nordvpn:
 
 pacman:
 	if [ ! -L "/etc/pacman.d/pacman.conf" ];then \
-		sudo ln -sf `pwd`/pacman/conf/pacman.conf /etc/pacman.d/pacman.conf ;\
+		sudo ln -sf `pwd`/pacman/conf/pacman.conf /etc/pacman.conf ;\
 	fi
 	if [ ! -f /usr/bin/rankmirrors ]; then \
-		$(PACMAN) pacman-contrib
+		$(PACMAN) pacman-contrib ; \
 	fi
 
 pacman_hooks: updown reflector
